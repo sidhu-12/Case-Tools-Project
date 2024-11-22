@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chat app</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  </head>
+  <body>
+    <div id="mario-chat">
+      <h2>Negotiation Chat</h2>
+      <div id="chat-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
+      <input type="text" id="handle" placeholder="handle" />
+      <input
+        type="text"
+        id="message"
+        placeholder="message"
+        onkeypress="typing()"
+      />
+      <button id="send">Send</button>
+    </div>
+    <h2 style="text-align: center;">Original Rent Amount : <%=amount%></h2>
+
+    <% if(type=="tenant"){%>
+
+    <form action="chat" method="POST">
+      <button type="submit" name="who" value="<%=user%>">PAY</button>
+    </form>
+    <%}%> <% if(type=="owner"){%>
+
+    <form action="chat" method="POST">
+      <b
+        ><label
+          style="font-size:20px;color:#575ed8;display: inline;margin-left:25%;"
+          >Enter negotiated amount:</label
+        ></b
+      >
+      <input type="text" name="rent_amount" id="amt" />
+      <button
+        type="submit"
+        name="who"
+        value="<%=user%>"
+        style="margin-top:10px;"
+      >
+        Submit
+      </button>
+    </form>
+    <%}%>
+  </body>
+  <script src="./chat.js"></script>
+</html>

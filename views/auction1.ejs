@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Auction</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  </head>
+
+  <body>
+    <div id="counter">Auction starts in : 40</div>
+    <br />
+    <br />
+    <div id="base">base bid : <%=base%></div>
+    <div id="bidprice"></div>
+
+    <br />
+    <div>
+      <form action="auction" method="POST">
+        <input
+          type="text"
+          id="who"
+          name="bidder"
+          placeholder="enter username"
+        />
+
+        <br />
+        <input
+          type="text"
+          name="bidvalue"
+          id="amount"
+          placeholder="enter value"
+          style="visibility: hidden"
+        /><br />
+        <label id="invalid"></label>
+        <br />
+        <button type="submit" id="reset" style="visibility: hidden">
+          PLACE BID
+        </button>
+      </form>
+      <br />
+      <br />
+      <h1 id="winner"></h1>
+    </div>
+
+    <br />
+    <form action="auction" method="POST">
+      <div id="final"></div>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>

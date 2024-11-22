@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Auction</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <link href="logn.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Play"
+      rel="stylesheet"
+    />
+    <style>
+      #pay {
+        border: none;
+        width: 190px;
+        background: white;
+        color: #000;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 10px 0;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      #pay:hover {
+        color: #fff;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="counter" style="color:white;text-align: center;">
+      Auction starts in : 40
+    </h1>
+    <div class="signin" style="margin-top:10px;margin-bottom:50px">
+      <h2 id="base" style="color:orange;margin-left:10px;margin-top:-20px">
+        Base Bid : <%=base%>
+      </h2>
+      <h2 id="bidprice"></h2>
+
+      <form action="auction" method="POST">
+        <input
+          type="text"
+          id="who"
+          name="bidder"
+          placeholder="enter username"
+        /><br /><br />
+        <input
+          type="text"
+          name="bidvalue"
+          id="amount"
+          placeholder="enter value"
+          style="visibility: hidden"
+        /><br /><br />
+        <h2 id="invalid"></h2>
+        <input
+          type="submit"
+          id="reset"
+          style="visibility: hidden"
+          value="PLACE BID"
+        />
+      </form>
+      <h1 id="winner" style="text-align: center;"></h1>
+      <br />
+      <form action="auction" method="POST">
+        <div id="final"></div>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

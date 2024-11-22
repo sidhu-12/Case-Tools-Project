@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Payment</title>
+    <link href="logn.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Play"
+      rel="stylesheet"
+    />
+    <style>
+      #cancel {
+        border: none;
+        width: 190px;
+        background: white;
+        color: #000;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 10px 0;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      #cancel:hover {
+        color: #fff;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h1 style="color:white;text-align: center;">Payment</h1>
+    <div class="signin">
+      <form action="payment" method="POST">
+        <h2 style="color:orange;">Amount : <%=amount%></h2>
+        <br />
+        <h2 style=>Your card no :</br><%=data.card_no%></h2>
+        <br /><br />
+        <input type="password" name="cvv" placeholder="Enter cvv" /><br /><br />
+        <input type="submit" value="Pay" />
+        <br /><br />
+      </form>
+      <input
+        id="cancel"
+        type="submit"
+        value="Cancel"
+        onclick="fun()"
+        style="margin-left:25px;"
+      />
+    </div>
+  </body>
+  <script>
+    function fun() {
+      location.href = "/dashboard";
+    }
+  </script>
+</html>

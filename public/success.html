@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Success</title>
+  </head>
+  <body>
+    <h1>Transaction success!!!</h1>
+    
+    <h3>Registration is done .You will receive an email</h1>
+
+    <h1>Redirecting to dashboard....</h1>
+  </body>
+  <script>
+      var time=5;
+    var ID=setInterval(() => {
+        time--;
+        if(time==0)
+        {
+            clearInterval(ID);
+            location.href="/dashboard";
+        }
+    }, 1000);
+  </script>
+</html>

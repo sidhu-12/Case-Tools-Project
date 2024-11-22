@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Upload</title>
+    <link href="sgnup.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Play"
+      rel="stylesheet"
+    />
+    <style>
+      #msg {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: yellow;
+        color: #000;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        right: 30%;
+        top: 30px;
+        font-size: 17px;
+        margin-right: 30px;
+      }
+
+      #msg.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          top: 30px;
+          opacity: 1;
+        }
+
+        to {
+          top: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          top: 30px;
+          opacity: 1;
+        }
+
+        to {
+          top: 0;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <!--
+  <body>
+    <h1>Welcome to upload page</h1>
+    <br />
+    <form action="upload" method="POST" enctype="multipart/form-data">
+      <label>Upload property image :</label><br /><br />
+      <input type="file" name="image" value="" required />
+      <br /><br />
+      <label>location :</label>
+      <input type="text" name="location" /><br /><br />
+      <label>Reg No :</label>
+      <input type="text" name="regno" /><br /><br />
+      <label>Value :</label>
+      <input type="text" name="value" /><br /><br />
+      <label>Choose your interest :</label><br />
+      <input type="radio" name="type" value="sell" checked />Sell
+      <br />
+      <input type="radio" name="type" value="rent" />Rent
+      <br />
+      <input type="radio" name="type" value="auction" />Auction <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  -->
+  <body>
+    <br />
+    <h1 style="color:white;text-align: center;">REMS</h1>
+    <div class="signup">
+      <form action="upload" method="POST" enctype="multipart/form-data">
+        <h2 style="color: #fff;">Upload</h2>
+        <input type="file" name="image" required /><br /><br />
+        <input
+          type="text"
+          name="location"
+          placeholder="Enter location"
+        /><br /><br />
+        <input
+          type="text"
+          name="regno"
+          placeholder="Enter regno of property"
+        /><br /><br />
+
+        <input type="text" name="value" placeholder="Enter value" /><br /><br />
+        <label>Choose your interest :</label><br />
+        <input
+          type="radio"
+          name="type"
+          value="sell"
+          checked
+          style="display: inline-block;"
+        />Sell
+
+        <input
+          type="radio"
+          name="type"
+          value="rent"
+          style="display: inline-block;"
+        />Rent
+
+        <input
+          type="radio"
+          name="type"
+          value="auction"
+          style="display: inline-block;"
+        />Auction <br /><br /><br /><br /><br />
+        <input type="submit" /><br /><br />
+      </form>
+    </div>
+  </body>
+</html>
